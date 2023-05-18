@@ -1,0 +1,48 @@
+@mixin flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+    @include flexCenter;
+    background-color: rgb(11, 11, 54);
+}
+
+.wrapper{
+    max-width: 1300px;
+    white-space: nowrap;
+    @include flexCenter;
+    position: relative;
+    gap: 1rem;
+    &__slide{
+        cursor: grab;
+        overflow: hidden;
+        left: 100px;
+        & img{
+            width: calc(100% / 3);
+            height: 450px;
+        }
+    }
+    &__arrows{
+        width: 50px;
+        height: 50px;
+        background-color: #ffffff;
+        border-radius: 50%;
+    }
+}
+
+
+@media screen and (max-width: 540px) {
+    .wrapper__slide img{
+        width: 100% !important;
+        height: 300px;
+    }
+}
